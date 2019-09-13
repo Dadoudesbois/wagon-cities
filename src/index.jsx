@@ -8,11 +8,10 @@ import { createStore, combineReducers } from 'redux';
 // internal modules
 import App from './components/app';
 import '../assets/stylesheets/application.scss';
-import citiesReducer from './reducers/cities-reducer.js';
+import citiesReducer from './reducers/cities_reducer';
 
 // State and reducers
 const reducers = combineReducers({
-  changeMe: (state = null, action) => state,
   cities: citiesReducer
 });
 
@@ -21,5 +20,6 @@ ReactDOM.render(
   <Provider store={createStore(reducers)}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  // document.getElementById('root')
+  document.querySelector('.container')
 );
